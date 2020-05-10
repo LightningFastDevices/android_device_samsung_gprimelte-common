@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017 The AOSP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,16 +25,13 @@ LOCAL_PATH := device/samsung/gprimelte-common
 
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += \
-	$(LOCAL_PATH)/overlay \
-	$(LOCAL_PATH)/overlay-lineage
+	$(LOCAL_PATH)/overlay
 
 # Include package config fragments
 include $(LOCAL_PATH)/product/*.mk
 
-# append the updater uri to the product properties if set
-ifneq ($(CM_UPDATER_OTA_URI),)
-	PRODUCT_PROPERTY_OVERRIDES += $(CM_UPDATER_OTA_URI)
-endif
-
 # Inhert dalvik heap values from aosp
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# System.prop tweaks
+TARGET_SYSTEM_PROP += device/samsung/gprimelte-common/system.prop
