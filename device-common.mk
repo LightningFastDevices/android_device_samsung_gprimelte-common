@@ -38,3 +38,6 @@ endif
 
 # Inhert dalvik heap values from aosp
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# System.prop tweaks
+TARGET_SYSTEM_PROP += device/samsung/gprimelte-common/system.prop
