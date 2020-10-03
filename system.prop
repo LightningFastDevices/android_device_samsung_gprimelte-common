@@ -2,23 +2,7 @@
 # Tweaks for Grand Prime
 #
 
-# Camera API
-persist.camera.HAL3.enabled=1
-
-# Google Assistant
-ro.opa.eligible_device=true
-
-# sdcardfs
-ro.sys.sdcardfs=true
-
-# GPS
-ro.ril.def.agps.mode=1
-
-# Wifi
-wifi.supplicant_scan_interval=240
-
 # RAM optimizations
-#persist.sys.ram_minfree=138240
 config.disable_atlas=true
 ro.sys.fw.trim_enable_memory=805306368
 ro.sys.fw.use_trim_settings=true
@@ -96,19 +80,6 @@ power_supply.wakeup=enable
 ro.config.hw_fast_dormancy=1
 ro.config.hw_power_saving=1
 
-# Misc Tweaks (enables ADB service)
-persist.service.adb.enable=1
-
-# Sensor Tweaks
-ro.ril.sensor.sleep.control=1
-ro.lge.proximity.delay=25
-mot.proximity.delay=25
-
-# Device will boot faster
-persist.sys.shutdown.mode=hibernate
-ro.config.hw_fast_dormancy=1
-ro.config.hw_quickpoweron=true
-
 # Reduce dial-out time
 ro.telephony.call_ring.delay=0
 
@@ -119,7 +90,6 @@ persist.sys.purgeable_assets=1
 dalvik.vm.dexopt-flags=m=y
 
 # More RAM
-#persist.sys.purgeable_assets=1
 persist.service.pcsync.enable=0
 persist.service.lgospd.enable=0
 
@@ -136,9 +106,6 @@ ro.lge.proximity.delay=15
 mot.proximity.delay=15
 ro.ril.enable.amr.wideband=1
 
-# TOUCH
-touch.presure.scale=0.001
-
 # Better Scrolling responsiveness and speed
 windowsmgr.max_events_per_sec=150
 ro.min_pointer_dur=8
@@ -149,46 +116,12 @@ persist.service.pcsync.enable=0
 ro.ril.enable.a52=1
 ro.ril.enable.a53=0
 
-# Increase camera's photo and video recording quality
-ro.media.dec.jpeg.memcap=8000000
-ro.media.enc.hprof.vid.bps=8000000
-ro.media.enc.hprof.vid.fps=65
-
-# Better Flashlight intensity and camera-flash quality
-ro.media.capture.flash=led
-ro.media.capture.flashMinV=3300000
-ro.media.capture.torchIntensity=40
-ro.media.capture.flashIntensity=70
-ro.media.capture.maxres=8m
-ro.media.capture.fast.fps=4
-ro.media.capture.slow.fps=120
-ro.media.panorama.defres=3264x1840
-ro.media.panorama.frameres=1280x720
-ro.camcorder.videoModes=true
-ro.media.enc.hprof.vid.fps=65
-
-# Increase the volume steps in-call
-ro.config.vc_call_steps=20
-
 # Better call voice quality.
 ro.ril.enable.amr.wideband=1
 
 # Disable Bytecode Verification
 dalvik.vm.verify-bytecode=false
 dalvik.vm.dexopt-flags=m=y,v=n,o=v
-#dalvik.vm.dexopt-flags=m=y,v=n,o=v,u=n
-
-# Improves Camera & Video Results
-ro.media.panorama.defres=3264x1840
-ro.media.panorama.frameres=1280x720
-ro.camcorder.videoModes=true
-ime_extend_row_keyboard=true
-ime_onehand_keyboard=true
-ime_split_keyboard=true
-ime_vibration_pattern=0:60
-
-# Increase jpg quality to 100%
-ro.media.enc.jpeg.quality=100
 
 # Fix some application issues (FC)
 ro.kernel.android.checkjni=0
@@ -209,10 +142,6 @@ media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-record=true
 
-# CRT
-persist.sys.screen_off=crt
-persist.sys.screen_on=none
-
 # Support For IPV4 and IPV6
 persist.telephony.support.ipv6=1
 persist.telephony.support.ipv4=1
@@ -228,19 +157,9 @@ debug.sf.hw=1
 debug.performance.tuning=1
 debug.egl.profiler=1 
 debug.egl.hw=1
-debug.composition.type=gpu 
-
-# Better image quality, lower performance.
-persist.sys.use_dithering=1
+debug.composition.type=gpu
 
 # art optimization
 dalvik.vm.image-dex2oat-filter=speed
 dalvik.vm.dex2oat-filter=speed
 dalvik.vm.dex2oat-Xmx=256m
-
-# Scrolling tweaks
-ro.max.fling_velocity=8000
-ro.min.fling_velocity=50
-
-# Force high-end graphics in low ram mode
-persist.sys.force_highendgfx=true
