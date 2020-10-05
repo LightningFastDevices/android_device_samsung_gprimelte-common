@@ -71,7 +71,7 @@
     </string-array>
 
     <!-- If this is true, the screen will fade off. -->
-    <bool name="config_animateScreenLights">ture</bool>
+    <bool name="config_animateScreenLights">false</bool>
 
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
@@ -166,10 +166,10 @@
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">15</integer>
+    <integer name="config_screenBrightnessSettingMinimum">10</integer>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">15</integer>
+    <integer name="config_screenBrightnessDim">10</integer>
 
     <!-- Minimum allowable screen brightness to use in a very dark room.
          This value sets the floor for the darkest possible auto-brightness
