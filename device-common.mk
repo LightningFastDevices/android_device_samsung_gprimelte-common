@@ -30,9 +30,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Permissions
 PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
-# Camera
-PRODUCT_PACKAGES += \
-    Camera2
 
 # Permissions
 PRODUCT_COPY_FILES += \
