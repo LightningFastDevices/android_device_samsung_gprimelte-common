@@ -35,6 +35,9 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_gprimelte
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
+# Kernel
+TARGET_LINUX_KERNEL_VERSION := 3.10
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := false
 
