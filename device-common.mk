@@ -25,11 +25,70 @@ LOCAL_PATH := device/samsung/gprimelte-common
 
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += \
-	$(LOCAL_PATH)/overlay \
-	$(LOCAL_PATH)/overlay-lineage
+	$(LOCAL_PATH)/overlay
 
-# Include package config fragments
-include $(LOCAL_PATH)/product/*.mk
+# Permissions
+PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
+# Camera
+PRODUCT_PACKAGES += \
+    Camera2
+
+# Permissions
+PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml
+
+# Screen density
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+# Doze
+PRODUCT_PACKAGES += \
+        SamsungDoze
+
+# Media configurations
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
+
+# Permissions
+PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+        frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+        init.target.rc
+
+# RIL
+PRODUCT_PACKAGES += \
+        libril \
+        librilutils \
+        rild
+
+# Permissions
+PRODUCT_COPY_FILES += \
+        frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+        frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+        frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+        frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+        persist.radio.snapshot_enabled=1 \
+        persist.radio.snapshot_timer=22 \
+        persist.radio.lte_vrte_ltd=1 \
+        persist.radio.jbims=1 \
+        persist.radio.no_wait_for_card=1
+
+# Telephony
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.telephony.default_network=10
+
+# Volume
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.config.vc_call_vol_steps=15 \
+        ro.config.media_vol_steps=30
 
 # append the updater uri to the product properties if set
 ifneq ($(CM_UPDATER_OTA_URI),)
