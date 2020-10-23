@@ -32,16 +32,11 @@ TARGET_SCREEN_DENSITY := 240
 DEVICE_PACKAGE_OVERLAYS += \
 	$(DEVICE_PATH)/overlay
 
-# Audio
-# Permissions
+# Audio Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    Camera2
-
-# Permissions
+# Camera Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml
 
