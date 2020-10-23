@@ -1,7 +1,15 @@
+# Battery
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.flinger_standbytime_ms=300
+
 # Improve Boot Time
 PRODUCT_PROPERTY_OVERRIDES += \
 	sys.vendor.shutdown.waittime=500 \
 	ro.build.shutdown_timeout=0
+
+# OpenGL
+PRODUCT_PROPERTY_OVERRIDES += \
+        debug.hwui.renderer=opengl
 
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -12,6 +20,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.stagefright.omx_default_rank.sw-audio=1 \
 	debug.stagefright.omx_default_rank=0 \
 	debug.stagefright.ccodec=0
+
+# Memory optimization
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.qti.am.reschedule_service=true \
+	ro.vendor.qti.sys.fw.bservice_enable=true \
+	ro.vendor.extension_library=libqti-perfd-client.so \
+	ro.core_ctl_min_cpu=0 \
+	ro.core_ctl_max_cpu=4 \
+	ro.min_freq_0=800000
+
+# Memory fix
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.fha_enable=true \
+	ro.config.dha_cached_max=16 \
+	ro.config.dha_empty_max=42 \
+	ro.config.dha_empty_init=32 \
+	ro.config.dha_lmk_scale=0.545 \
+	ro.config.dha_th_rate=2.3 \
+	ro.config.sdha_apps_bg_max=64 \
+	ro.config.sdha_apps_bg_min=8
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
