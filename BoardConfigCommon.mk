@@ -21,6 +21,10 @@ DEVICE_PATH := device/samsung/gprimelte-common
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+
 # Include
 TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
 
