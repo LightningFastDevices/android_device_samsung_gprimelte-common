@@ -7,6 +7,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
 
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.stagefright.omx_default_rank.sw-audio=1 \
+	debug.stagefright.omx_default_rank=0 \
+	debug.stagefright.ccodec=0
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.snapshot_enabled=1 \
