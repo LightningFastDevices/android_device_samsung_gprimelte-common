@@ -23,13 +23,60 @@ $(call inherit-product-if-exists, vendor/samsung/gprimelte-common/gprimelte-comm
 
 LOCAL_PATH := device/samsung/gprimelte-common
 
+# Display Density
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += \
-	$(LOCAL_PATH)/overlay \
-	$(LOCAL_PATH)/overlay-lineage
+	$(LOCAL_PATH)/overlay
 
-# Include package config fragments
-include $(LOCAL_PATH)/product/*.mk
+# Audio
+# Permissions
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
+
+# Camera
+PRODUCT_PACKAGES += \
+    Camera2
+
+# Permissions
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml
+
+# Doze
+PRODUCT_PACKAGES += \
+	SamsungDoze
+
+# Media configurations
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
+
+# Radio Permissions
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+	init.target.rc
+
+# RIL
+PRODUCT_PACKAGES += \
+	libril \
+	librilutils \
+	rild
+
+# Sensor Permissions
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+	frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml
+
+# Proprieties
+-include $(LOCAL_PATH)/system_prop.mk
 
 # append the updater uri to the product properties if set
 ifneq ($(CM_UPDATER_OTA_URI),)
