@@ -23,3 +23,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.config.low_ram=true \
         ro.config.zram.enabled=true
+
+# HWUI
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.hwui.drop_shadow_cache_size=1 \
+	ro.hwui.gradient_cache_size=0.2 \
+	ro.hwui.layer_cache_size=6 \
+	ro.hwui.path_cache_size=2 \
+	ro.hwui.r_buffer_cache_size=1 \
+	ro.hwui.texture_cache_size=8 \
+	persist.service.lgospd.enable=0 \
+	persist.service.pcsync.enable=0 \
+	ro.ril.enable.a52=1 \
+	ro.ril.enable.a53=0
+
+# Art Opt
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.image-dex2oat-filter=speed \
+	dalvik.vm.dex2oat-filter=speed \
+	dalvik.vm.dex2oat-Xmx=256m
