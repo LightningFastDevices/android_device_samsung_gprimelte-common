@@ -1,6 +1,11 @@
+# Improve Boot Time
+PRODUCT_PROPERTY_OVERRIDES += \
+	sys.vendor.shutdown.waittime=500 \
+	ro.build.shutdown_timeout=0
+
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608
+	ro.opengles.version=196608
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
