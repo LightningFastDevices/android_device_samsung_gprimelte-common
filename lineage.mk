@@ -20,3 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_CHARACTERISTICS := phone
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
+
+BUILD_FINGERPRINT := "samsung/fortuna3gdtvvj/fortuna3gdtv:5.0.2/LRX22G/G530BTVJU1BPH4:user/release-keys"
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="fortuna3gdtv-user 5.0.2 LRX22G G530BTVJU1BPH4 release-keys"
