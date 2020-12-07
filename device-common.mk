@@ -26,7 +26,7 @@ DEVICE_PATH := device/samsung/gprimelte-common
 # Display Density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-TARGET_SCREEN_DENSITY := 320
+TARGET_SCREEN_DENSITY := 240
 
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += \
