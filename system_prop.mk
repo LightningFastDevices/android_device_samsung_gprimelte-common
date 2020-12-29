@@ -41,6 +41,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.sdha_apps_bg_max=64 \
 	ro.config.sdha_apps_bg_min=8
 
+# Network
+PRODUCT_PROPERTY_OVERRIDES += \
+	net.tcp.buffersize.default=4096,87380,256960,4096, 16384,256960 \
+	net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.lte=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.gprs=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.edge=4096,87380,256960,4096,163 84,256960 \
+	net.dns1=8.8.8.8 \
+	net.dns2=8.8.4.4
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.snapshot_enabled=1 \
