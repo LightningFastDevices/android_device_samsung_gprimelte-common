@@ -53,6 +53,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	net.dns1=8.8.8.8 \
 	net.dns2=8.8.4.4
 
+# Network Speed
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.ril.hsxpa=2 \
+	ro.ril.gprsclass=10 \
+	ro.ril.hep=1 \
+	ro.ril.enable.dtm=1 \
+	ro.ril.hsdpa.category=10 \
+	ro.ril.enable.a53=1 \
+	ro.ril.enable.3g.prefix=1 \
+	ro.ril.htcmaskw1.bitmask=4294967295 \
+	ro.ril.htcmaskw1=14449 \
+	ro.ril.hsupa.category=5 \
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.snapshot_enabled=1 \
